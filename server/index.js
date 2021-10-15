@@ -16,4 +16,3 @@ app.use(cors());
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => app.listen(PORT, () => console.log(`Server running on port ${PORT}`)))
     .catch((error)=> console.error(error.message));
-

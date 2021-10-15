@@ -5,7 +5,7 @@ import './App.scss'
 const App = () => {
     return (
         <div id="App" className="container">
-        <h1>Short Stories</h1>
+            <h1>Short Stories</h1>
         </div>
     )
 }
