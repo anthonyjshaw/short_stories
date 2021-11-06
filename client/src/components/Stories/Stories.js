@@ -1,9 +1,11 @@
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getStories } from '../../actions/stories';
+import { getStories, destroyStory } from '../../actions/stories';
+
 const Stories = () => {
 	const dispatch = useDispatch();
+	
     useEffect(() => {
         dispatch(getStories());
     }, [dispatch]);
@@ -19,7 +21,11 @@ const Stories = () => {
 				</div>
 				<hr/>
 				<div>
-					{stories.map(e => <div key={e._id}><p><Link to={`/stories/${e.title}`}>{e.title}</Link></p></div>)}
+					{stories.map(e => 
+					<div key={e._id}>
+						<p><Link to={`/stories/${e.title}`}>{e.title}</Link> <span><Link to={`/stories/${e.title}/edit`}>Edit story</Link></span> <span onClick={() => dispatch(destroyStory(e._id))}>Delete story</span></p>
+					</div>)
+					}
 				</div>
 			</div>
 		);

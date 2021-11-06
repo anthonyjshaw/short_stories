@@ -9,9 +9,6 @@ const NewStory = (props) => {
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		// console.log(storyValue.text)
-		// const newText = storyValue.text.split('\n').map(e => { return { paragraph: e}});
-		// setStoryValue({...storyValue, text: newText});
 		alert(JSON.stringify(storyValue));
 		dispatch(createStory(storyValue));
 		props.history.push(`/stories/${storyValue.title}`)
@@ -21,14 +18,17 @@ const NewStory = (props) => {
 		<div>
 			<h1>Create story</h1>
 			<form onSubmit={handleSubmit}>
+				<div className="input-field">
 				<label htmlFor="title">Story title</label>
 				<input name="title" type="text" onChange={(e) => setStoryValue({...storyValue, title: e.target.value })}/>
+				</div>
+				<div className="input-field">
 				<label htmlFor="text">Story text</label>
 				<textarea name="text" rows="10" cols="50" onChange={(e) => setStoryValue({...storyValue, text: e.target.value.split('\n').map(e => {return {paragraph: e}})})}>
 				</textarea>
-				<input type="submit"/>
+				</div>
+				<input type="submit" className="story-form-submit"/>
 			</form>
-			<p>Hey</p>
 		</div>
 	)
 }

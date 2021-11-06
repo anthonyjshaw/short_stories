@@ -9,7 +9,7 @@ import Story from '../models/Story.js';
 
 export const getComments = async (req, res) => {
 	try {
-		console.log(req.params)
+		console.log(req.params);
 		const story = await Story.find({title: req.query.title});
 		const comments = await Comment.find({story_id: story.id});
 		res.status(200).json(comments);

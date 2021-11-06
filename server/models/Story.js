@@ -9,7 +9,7 @@ const storySchema = mongoose.Schema({
     text: {
         required: true,
         type: [
-            { paragraph: String },
+        { paragraph: String },
             ]
     },
     comments: [{
