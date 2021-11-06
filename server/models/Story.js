@@ -9,9 +9,12 @@ const storySchema = mongoose.Schema({
     text: {
         required: true,
         type: [
-            { paragraph: String}
+            { paragraph: String },
             ]
     },
+    comments: [{
+        type: mongoose.Schema.Types.ObjectId, ref: "Comment"
+    }],
     createdAt: {
         type: Date,
         default: new Date()

@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/App.scss"],"names":[],"mappings":"AAAA,KACI,QAAA,CACA,sCAAA,CAIJ,WACI,UAAA,CACA,WAAA","file":"main.53bbb547.chunk.css","sourcesContent":["body {\n    margin: 0;\n    font-family: Arial, Helvetica, sans-serif;\n\n}\n\n.container {\n    width: 77vw;\n    margin: auto;\n}"]}
